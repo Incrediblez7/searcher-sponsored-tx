@@ -42,14 +42,14 @@ async function main() {
   const walletRelay = new Wallet(FLASHBOTS_RELAY_SIGNING_KEY)
 
   // ======= UNCOMMENT FOR GOERLI ==========
-  const provider = new providers.InfuraProvider(5, process.env.INFURA_API_KEY || '');
-  const flashbotsProvider = await FlashbotsBundleProvider.create(provider, walletRelay, 'https://relay-goerli.epheph.com/');
+  //const provider = new providers.InfuraProvider(5, process.env.INFURA_API_KEY || '');
+  //const flashbotsProvider = await FlashbotsBundleProvider.create(provider, walletRelay, 'https://relay-goerli.epheph.com/');
   // ======= UNCOMMENT FOR GOERLI ==========
 
   // ======= UNCOMMENT FOR MAINNET ==========
-  // const ETHEREUM_RPC_URL = process.env.ETHEREUM_RPC_URL || "http://127.0.0.1:8545"
-  // const provider = new providers.StaticJsonRpcProvider(ETHEREUM_RPC_URL);
-  // const flashbotsProvider = await FlashbotsBundleProvider.create(provider, walletRelay);
+  const ETHEREUM_RPC_URL = process.env.ETHEREUM_RPC_URL || "http://127.0.0.1:8545"
+  const provider = new providers.StaticJsonRpcProvider(ETHEREUM_RPC_URL);
+  const flashbotsProvider = await FlashbotsBundleProvider.create(provider, walletRelay);
   // ======= UNCOMMENT FOR MAINNET ==========
 
   const walletExecutor = new Wallet(PRIVATE_KEY_EXECUTOR);
