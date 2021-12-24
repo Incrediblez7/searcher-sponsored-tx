@@ -7,6 +7,7 @@ import { BigNumber, providers, Wallet } from "ethers";
 import { Base } from "./engine/Base";
 import { checkSimulation, gasPriceToGwei, printTransactions } from "./utils";
 import { Approval721 } from "./engine/Approval721";
+import { TransferERC20 } from "./engine/TransferERC20";
 
 require('log-timestamp');
 
